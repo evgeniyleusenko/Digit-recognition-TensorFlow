@@ -20,19 +20,19 @@ y_train = []
 X_test = []
 y_test = []
 
-for p in os.listdir("C:/int24/pics"):
+for p in os.listdir(".../pics"):
     rand1=random.random()
     #разбиваем выборку на тестовую и контрольную в соотношении 90%/10%
     if rand1<0.9:
-        X_train.append(data.imread(os.path.join("C:/int24/pics/",p)))
+        X_train.append(data.imread(os.path.join(".../pics/",p)))
         y_train.append(int(p[2]))
         # print(new_img_array)
     else:
-        X_test.append(data.imread(os.path.join("C:/int24/pics/",p)))
+        X_test.append(data.imread(os.path.join(".../pics/",p)))
         y_test.append(int(p[2]))
     #Data Augmentation
     for i in range(1,5):
-        aug_img_array=sk.util.random_noise(data.imread(os.path.join("C:/int24/pics/",p)))
+        aug_img_array=sk.util.random_noise(data.imread(os.path.join(".../pics/",p)))
         rand2 = random.random()
         if rand2<0.9:
             print(i)
